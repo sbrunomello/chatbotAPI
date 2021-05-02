@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <title>Candice</title>
+  <title>ChatBot API v0</title>
   <head>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
-    />
+    <link rel="shortcut icon"type="image/x-icon" href="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div class="boxed">
+      <div class="container">
+        <div class="container-body" id="chatbox">
+
+          <p class="botText">
+           <img src="https://icon-library.com/images/bot-icon/bot-icon-7.jpg" alt="BOT" style="width:80px;height:60px;" />
+           <span>Fala ai que eu sou brabo! ❤️</span>
+          </p>
+        </div>
+        <div id="userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Digite uma mensagem..." />
+        </div>
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"> <img src="https://icon-library.com/images/bot-icon/bot-icon-7.jpg" alt="BOT" style="width:80px;height:60px;" /><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+      </script>
+    </div>
     <style>
-      body {
+    body {
         font-family: monospace;
-      }
-      h1 {
-        background-color: yellow;
-        display: inline-block;
-        font-size: 3em;
-        margin: 0;
-        padding: 14px;
       }
       h3 {
         color: black;
@@ -80,64 +106,11 @@
         width: 78%;
         margin-top: 60px;
         border: 1px solid green;
+        height: 300px!important;
+        overflow: auto;
       }
       .box {
         border: 2px solid black;
-      }
-    </style>
+      }</style>
   </head>
-  <body>
-    <img />
-    <center>
-      <h1>
-        <img
-          src="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
-          alt="BOT"
-          style="width:40px;height:40px;"
-        />BOT BRABO ESPERTÃO
-      </h1>
-    </center>
-
-    <div class="box"></div>
-    <div class="boxed">
-      <div>
-        <div id="chatbox">
-          <img
-            src="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
-            alt="BOT"
-            style="width:40px;height:40px;"
-          />
-          <p class="botText">
-            <span>Fala ai que eu sou brabo! ❤️</span>
-          </p>
-        </div>
-        <div id="userInput">
-          <input id="textInput" type="text" name="msg" placeholder="Message" />
-        </div>
-      </div>
-      <script>
-        function getBotResponse() {
-          var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document
-            .getElementById("userInput")
-            .scrollIntoView({ block: "start", behavior: "smooth" });
-          $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-            $("#chatbox").append(botHtml);
-            document
-              .getElementById("userInput")
-              .scrollIntoView({ block: "start", behavior: "smooth" });
-          });
-        }
-        $("#textInput").keypress(function(e) {
-          if (e.which == 13) {
-            getBotResponse();
-          }
-        });
-      </script>
-    </div>
-  </body>
 </html>

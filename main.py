@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 bot = ChatBot("Bot brabo")
 # bot.set_trainer(ListTrainer)
-bot.train(['What is your name?', 'My name is Candice'])
-bot.train(['Who are you?', 'I am a bot' ])
-bot.train(['Who created you?', 'Tony Stark', 'Sahil Rajput', 'You?'])
-bot.set_trainer(ChatterBotCorpusTrainer)
-bot.train("chatterbot.corpus.english")
+# bot.train(['What is your name?', 'My name is Candice'])
+# bot.train(['Who are you?', 'I am a bot' ])
+# bot.train(['Who created you?', 'Tony Stark', 'Sahil Rajput', 'You?'])
+# bot.set_trainer(ChatterBotCorpusTrainer)
+# bot.train("chatterbot.corpus.english")
 
 @app.route("/")
 def home():
