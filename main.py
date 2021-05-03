@@ -6,7 +6,7 @@ from chatterbot.trainers import ListTrainer
 
 app = Flask(__name__)
 
-bot = ChatBot("Bot brabo")
+#bot = ChatBot("Bot brabo")
 
 # trainer = ChatterBotCorpusTrainer(bot)
 
