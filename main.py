@@ -7,13 +7,18 @@ from chatterbot.trainers import ListTrainer
 
 app = Flask(__name__)
 
-bot = ChatBot("Bot brabo")
-# bot.set_trainer(ListTrainer)
-# bot.train(['What is your name?', 'My name is Candice'])
-# bot.train(['Who are you?', 'I am a bot' ])
-# bot.train(['Who created you?', 'Tony Stark', 'Sahil Rajput', 'You?'])
-# bot.set_trainer(ChatterBotCorpusTrainer)
-# bot.train("chatterbot.corpus.english")
+bot = ChatBot("Bot brabo", storage_adapter="chatterbot.storage.SQLStorageAdapter")
+
+trainer = ChatterBotCorpusTrainer(bot)
+
+trainer.train('chatterbot.corpus.portuguese.greetings')
+# trainer = ListTrainer(bot)
+# trainer.train("chatterbot.corpus.Portuguese")
+# trainer.train("chatterbot.corpus.Portuguese.greetings_pt-BR")
+# trainer.train("chatterbot.corpus.Portuguese.conversations_pt-BR")
+
+# Treino baseado no corpus em português
+# bot.train("chatterbot.corpus.Portuguese")
 
 @app.route("/")
 def home():
