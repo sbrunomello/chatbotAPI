@@ -6,11 +6,11 @@ from chatterbot.trainers import ListTrainer
 
 app = Flask(__name__)
 
-bot = ChatBot("Bot brabo", storage_adapter="chatterbot.storage.SQLStorageAdapter")
+bot = ChatBot("Bot brabo")
 
-trainer = ChatterBotCorpusTrainer(bot)
+# trainer = ChatterBotCorpusTrainer(bot)
 
-trainer.train('chatterbot.corpus.portuguese.greetings')
+# trainer.train('chatterbot.corpus.portuguese.greetings')
 # trainer = ListTrainer(bot)
 # trainer.train("chatterbot.corpus.Portuguese")
 # trainer.train("chatterbot.corpus.Portuguese.greetings_pt-BR")
