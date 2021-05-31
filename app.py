@@ -11,8 +11,8 @@ bot = ChatBot("Bot brabo", storage_adapter="chatterbot.storage.SQLStorageAdapter
 trainer = ChatterBotCorpusTrainer(bot)
 
 # trainer.train('chatterbot.corpus.portuguese')
-trainer.train('chatterbot.corpus.portuguese.greetings')
-trainer.train('chatterbot.corpus.portuguese.conversations')
+# trainer.train('chatterbot.corpus.portuguese.greetings')
+# trainer.train('chatterbot.corpus.portuguese.conversations')
 # trainer = ListTrainer(bot)
 # trainer.train("chatterbot.corpus.Portuguese")
 # trainer.train("chatterbot.corpus.Portuguese.greetings_pt-BR")
