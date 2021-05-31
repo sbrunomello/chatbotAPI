@@ -9,5 +9,3 @@ handlers:
 libraries:
 - name: flask
   version: 0.12
-- name: chatterbot
-  version: 1.02
