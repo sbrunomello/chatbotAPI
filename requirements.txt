@@ -1,31 +1,4 @@
-# ----------------------
-# Flask
-# ----------------------
-flask
-
-# ----------------------
-# Production Server
-# ----------------------
-gevent
-gunicorn
-# ----------------------
-# CHat
-# ----------------------
-Fabric
-Flask-SQLAlchemy
-Flask-WTF
-Jinja2
-MarkupSafe
-Pillow
-SQLAlchemy
-WTForms
-Werkzeug
-argparse
-coverage
-ecdsa
-itsdangerous
-mechanize
-nltk
-paramiko
-requests
-ChatterBot
+Flask==1.1.4; python_version < '3.0'
+Flask==2.0.0; python_version > '3.0'
+Werkzeug==1.0.1; python_version < '3.0'
+chatterbot
