@@ -1,31 +1,4 @@
-# ----------------------
-# Flask
-# ----------------------
-flask
-
-# ----------------------
-# Production Server
-# ----------------------
-gevent
+django>=1.8.0,<2.0.0
+chatterbot>=0.7.6,<0.7.7
 gunicorn
-# ----------------------
-# CHat
-# ----------------------
-Fabric
-Flask-SQLAlchemy
-Flask-WTF
-Jinja2
-MarkupSafe
-Pillow
-SQLAlchemy
-WTForms
-Werkzeug
-argparse
-coverage
-ecdsa
-itsdangerous
-mechanize
-nltk
-paramiko
-requests
-ChatterBot
+whitenoise
