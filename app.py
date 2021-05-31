@@ -6,9 +6,9 @@ from chatterbot.trainers import ListTrainer
 
 app = Flask(__name__)
 
-bot = ChatBot("Bot brabo", storage_adapter="chatterbot.storage.SQLStorageAdapter")
+# bot = ChatBot("Bot brabo", storage_adapter="chatterbot.storage.SQLStorageAdapter")
 
-trainer = ChatterBotCorpusTrainer(bot)
+# trainer = ChatterBotCorpusTrainer(bot)
 
 # trainer.train('chatterbot.corpus.portuguese')
 # trainer.train('chatterbot.corpus.portuguese.greetings')
@@ -25,10 +25,10 @@ trainer = ChatterBotCorpusTrainer(bot)
 def home():
     return render_template("home.html")
 
-@app.route("/get")
-def get_bot_response():
-    userText = request.args.get('msg')
-    return str(bot.get_response(userText))
+#@app.route("/get")
+#def get_bot_response():
+#    userText = request.args.get('msg')
+#    return str(bot.get_response(userText))
 
 if __name__ == "__main__":
-    app.run(host='192.168.0.118')
+    app.run(debug=True)
