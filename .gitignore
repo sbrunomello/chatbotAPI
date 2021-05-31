@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+*.sqlite3
+=======
 bin
 build
 dist
@@ -23,3 +27,4 @@ docs/_build/
 
 examples/settings.py
 examples/ubuntu_dialogs*
+>>>>>>> parent of 8305c35 (Revert "updates")
